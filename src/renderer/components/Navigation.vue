@@ -1,9 +1,15 @@
 <template>
-  <div id="nav">
-    <a class="btn btn-primary" role="button" href="/#/">Main</a>
-    <a class="btn btn-primary" role="button" href="/#/changenode">Change node</a>
-    <a class="btn btn-primary" role="button" href="/#/fromseed">from Seed</a>
-  </div>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="/#/">Main</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/#/changenode">Change Node</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/#/fromseed">from Seed</a>
+    </li>
+  </ul>
 </template>
 
 <style scoped>

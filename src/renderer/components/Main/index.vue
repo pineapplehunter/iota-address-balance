@@ -12,19 +12,14 @@
 </template>
 
 <script>
-import AddressView from '@/components/AddressBalances/AddressView'
+import AddressView from '@/components/Main/AddressView'
 
 export default {
   components: {AddressView},
   name: 'iota-adress-balance',
   data () {
     return {
-      addresses: [
-        'SSCBRWUNIGSYLQJWZNZXVGCOY9OGO9DKYLZFJMPZRC9BWH9QPCTLHYKKFSRNZ9DRVWEVPS9OBWIFCTASAEHKLTPLXW'
-      ],
-      new_address: '',
-      provider: 'https://nodes.thetangle.org:443',
-      new_provider: ''
+      new_address: ''
     }
   },
   computed: {
@@ -32,12 +27,18 @@ export default {
       const pat = /[A-Z9]{90}/i
       const result = pat.test(this.new_address)
       return result
-    }
+    },
+    addresses () { return this.$store.state.addresses },
+    provider () { return this.$store.state.provider }
   },
   methods: {
     show_new_address: function () {
-      if (this.addresses.indexOf(this.new_address) === -1) {
-        this.addresses.push(this.new_address)
+      // if (this.addresses.indexOf(this.new_address) === -1) {
+      //   this.addresses.push(this.new_address)
+      // }
+      // this.new_address = ''
+      if (this.$store.state.addresses.indexOf(this.new_address) === -1) {
+        this.$store.state.addresses.push(this.new_address)
       }
       this.new_address = ''
     },
@@ -47,12 +48,7 @@ export default {
 }
 </script>
 
-<style>
-  /* CSS */
-#app {
-  padding: 20px;
-}
-
+<style scoped>
 #set-provider-btn {
   margin-bottom: 10px;
 }
