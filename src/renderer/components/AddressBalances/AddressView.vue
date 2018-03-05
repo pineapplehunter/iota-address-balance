@@ -2,13 +2,22 @@
 	<div class="card" id="addressview">
     <div class="card-body card-text">
       <p>{{ address }}</p>
-      <div class="text-right"><span class="badge" :class="badge.type" v-if="badge.show">{{badge.text}}</span><h2 id="value">{{ balance }} {{ unit }}</h2></div>
+      <div class="text-right">
+        <span class="badge" :class="badge.type" v-if="badge.show">
+          {{badge.text}}
+        </span>
+        <h2 id="value">
+          {{ balance }} <strong>{{ unit }}</strong>
+        </h2>
+        <button type="button" class="btn btn-outline-secondary btn-sm" @click="refresh_balance()">Refresh</button>
+        
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getBalance, isSpent } from '@/components/IotaTools/tools'
+import { getBalance, isSpent, getIotaApi } from '@/components/IotaTools/tools'
 
 export default {
   name: 'address-view',
@@ -27,25 +36,29 @@ export default {
     address: {
       type: String,
       required: true
+    },
+    provider: {
+      type: String,
+      required: true
     }
   },
   methods: {
     refresh_balance: function () {
       let vm = this
       vm.balance = 'Loading...'
+      vm.unit = ''
       vm.badge.show = false
 
       async function r () {
-        let Pb = getBalance(vm.address)
-        let Pspent = isSpent(vm.address)
+        const iota = getIotaApi(vm.provider)
+        const Pb = getBalance(iota, vm.address)
+        const Pspent = isSpent(iota, vm.address)
 
         const b = await Pb
         const spent = await Pspent
 
         vm.balance = b.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
         vm.unit = 'i'
-
-        console.log(spent)
 
         if (spent === true) {
           vm.badge.text = 'used'

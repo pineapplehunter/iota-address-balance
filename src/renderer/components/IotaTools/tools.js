@@ -1,10 +1,12 @@
 import IOTA from 'iota.lib.js'
 
-const iota = new IOTA({
-  'provider': 'https://nodes.thetangle.org:443'
-})
+function getIotaApi (uri) {
+  return new IOTA({
+    'provider': uri
+  })
+}
 
-async function getBalance (address) {
+async function getBalance (iota, address) {
   return new Promise((resolve, reject) => {
     iota.api.getBalances([address], 1, (err, resp) => {
       if (err) {
@@ -16,7 +18,7 @@ async function getBalance (address) {
   })
 }
 
-async function isSpent (address) {
+async function isSpent (iota, address) {
   return new Promise((resolve, reject) => {
     iota.api.wereAddressesSpentFrom(address, (err, res) => {
       if (err) {
@@ -30,5 +32,6 @@ async function isSpent (address) {
 
 export {
   getBalance,
-  isSpent
+  isSpent,
+  getIotaApi
 }
