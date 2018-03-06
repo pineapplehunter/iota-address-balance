@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     address_ok: function () {
-      const pat = /[A-Z9]{90}/i
+      const pat = /^[A-Z9]{90}$/i
       const result = pat.test(this.new_address)
       return result
     },

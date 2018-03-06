@@ -19,7 +19,7 @@ npm manifest:
     "version": "0.0.0",
     "author": "Shogo Takata <peshogo@gmail.com>",
     "description": "an app that shows the iota balance of each address",
-    "license": "GPL-2",
+    "license": "MIT",
     "main": "./dist/electron/main.js",
     "scripts": {
       "build": "node .electron-vue/build.js && electron-builder",
@@ -77,10 +77,12 @@ npm manifest:
       "axios": "^0.18.0",
       "bootstrap": "^4.0.0",
       "iota.lib.js": "^0.4.7",
+      "jquery": "^3.3.1",
+      "popper.js": "^1.12.9",
       "vue": "^2.3.3",
       "vue-electron": "^1.0.6",
       "vue-router": "^2.5.3",
-      "vuex": "^2.3.1"
+      "vuex": "^3.0.1"
     },
     "devDependencies": {
       "babel-core": "^6.25.0",
@@ -4966,6 +4968,10 @@ Lockfile:
       which "^1.1.1"
       wordwrap "^1.0.0"
   
+  jquery@^3.3.1:
+    version "3.3.1"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  
   js-base64@^2.1.9:
     version "2.4.3"
     resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
@@ -6369,6 +6375,10 @@ Lockfile:
   pluralize@^7.0.0:
     version "7.0.0"
     resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
+  
+  popper.js@^1.12.9:
+    version "1.12.9"
+    resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.12.9.tgz#0dfbc2dff96c451bb332edcfcfaaf566d331d5b3"
   
   portfinder@^1.0.9:
     version "1.0.13"
@@ -8428,9 +8438,9 @@ Lockfile:
     version "2.5.13"
     resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
   
-  vuex@^2.3.1:
-    version "2.5.0"
-    resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.5.0.tgz#20f0265ade6c9a5ac6724a405d3ffdb4726c9741"
+  vuex@^3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
   
   watchpack@^1.4.0:
     version "1.5.0"

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Shogo Takata <peshogo@gmail.com>",
   "description": "an app that shows the iota balance of each address",
-  "license": "GPL-2",
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -61,6 +61,8 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
     "iota.lib.js": "^0.4.7",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
     "vue": "^2.3.3",
     "vue-electron": "^1.0.6",
     "vue-router": "^2.5.3",
