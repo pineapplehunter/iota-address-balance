@@ -24,7 +24,7 @@
   },
   "build": {
     "productName": "iota-adress-balance",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "com.shogo.iota-balance-app",
     "directories": {
       "output": "build"
     },
@@ -126,5 +126,9 @@
     "webpack-dev-server": "^2.7.1",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peshogo/iota-address-balance.git"
   }
 }
