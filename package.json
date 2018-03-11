@@ -1,6 +1,6 @@
 {
   "name": "iota-adress-balance",
-  "version": "v0.1.2",
+  "version": "v0.1.3",
   "author": "Shogo Takata <peshogo@gmail.com>",
   "description": "an app that shows the iota balance of each address",
   "license": "MIT",
