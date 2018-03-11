@@ -1,8 +1,8 @@
 Arguments: 
-  /home/shogo/.nvm/versions/node/v8.9.4/bin/node /usr/share/yarn/bin/yarn.js dev
+  /home/shogo/.nvm/versions/node/v8.9.4/bin/node /usr/share/yarn/bin/yarn.js build
 
 PATH: 
-  /home/shogo/.pyenv/plugins/pyenv-virtualenv/shims:/home/shogo/.pyenv/shims:~/.pyenv/bin:/home/shogo/.cargo/bin:/home/shogo/.pyenv/plugins/pyenv-virtualenv/shims:/home/shogo/.pyenv/shims:~/.pyenv/bin:/home/shogo/.nvm/versions/node/v8.9.4/bin:/home/shogo/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/shogo/.cargo/bin:/home/shogo/Projects/go/bin:/home/shogo/.cargo/bin:/home/shogo/Projects/go/bin
+  /home/shogo/.pyenv/shims:/home/shogo/.pyenv/bin:/home/shogo/.pyenv/shims:/home/shogo/.pyenv/bin:/home/shogo/.nvm/versions/node/v8.9.4/bin:/home/shogo/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
   1.5.1
@@ -16,17 +16,17 @@ Platform:
 npm manifest: 
   {
     "name": "iota-adress-balance",
-    "version": "0.0.0",
+    "version": "v0.1.3",
     "author": "Shogo Takata <peshogo@gmail.com>",
     "description": "an app that shows the iota balance of each address",
     "license": "MIT",
     "main": "./dist/electron/main.js",
     "scripts": {
-      "build": "node .electron-vue/build.js && electron-builder",
+      "build": "npm run build:all",
       "build:dir": "node .electron-vue/build.js && electron-builder --dir",
       "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
       "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-      "build:all": "node .electron-vue/build.js && electron-builder --platform all --arch x64",
+      "build:all": "node .electron-vue/build.js && electron-builder -wl",
       "dev": "node .electron-vue/dev-runner.js",
       "e2e": "npm run pack && mocha test/e2e",
       "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src test",
@@ -40,7 +40,7 @@ npm manifest:
     },
     "build": {
       "productName": "iota-adress-balance",
-      "appId": "org.simulatedgreg.electron-vue",
+      "appId": "com.shogo.iota-balance-app",
       "directories": {
         "output": "build"
       },
@@ -62,14 +62,28 @@ npm manifest:
           }
         ]
       },
+      "zip": true,
       "mac": {
-        "icon": "build/icons/icon.icns"
+        "icon": "build/icons/icon.icns",
+        "target": [
+          "dmg",
+          "zip"
+        ]
       },
       "win": {
-        "icon": "build/icons/icon.ico"
+        "icon": "build/icons/icon.ico",
+        "target": [
+          "nsis",
+          "zip"
+        ]
       },
       "linux": {
-        "icon": "build/icons"
+        "icon": "build/icons",
+        "target": [
+          "AppImage",
+          "deb",
+          "zip"
+        ]
       }
     },
     "dependencies": {
@@ -142,6 +156,10 @@ npm manifest:
       "webpack-dev-server": "^2.7.1",
       "webpack-hot-middleware": "^2.18.2",
       "webpack-merge": "^4.1.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/peshogo/iota-address-balance.git"
     }
   }
 
@@ -8827,7 +8845,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c node .electron-vue/dev-runner.js
+  Arguments: -c npm run build:all
   Directory: /home/shogo/Projects/node/iota-adress-balance
   Output:
   
