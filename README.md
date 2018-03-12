@@ -23,19 +23,6 @@ npm run dev
 # yarn dev
 ```
 
-# for mac
-I can't build this for mac, because don't have mac building environment.
-if you have a mac and you want to build it first see the from source section.
-
-after cloning and installing dependencies, you can build it by these commands.
-
-```
-npm install -g electron-builder
-electron-builder -m
-```
-
-the app will be generated in `/build/`
-
 ---
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[1c165f7](https://github.com/SimulatedGREG/electron-vue/tree/1c165f7c5e56edaf48be0fbb70838a1af26bb015) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
