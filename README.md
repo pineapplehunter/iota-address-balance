@@ -1,26 +1,26 @@
 # iota-adress-balance
+an app that shows the iota balance of each address
 
-> an app that shows the iota balance of each address
+# Start
+Just download from the releases.
 
-#### Build Setup
+You can see your balance by just typing in your addrress in the text box.
 
-``` bash
-# install dependencies
+# from source
+start by cloning this repo.
+
+```bash
+git clone https://github.com/peshogo/iota-address-balance.git
+```
+
+install the dependencies and build a dev version of it.
+
+```bash
 npm install
-
-# serve with hot reload at localhost:9080
 npm run dev
-
-# build electron application for production
-npm run build
-
-# run unit & end-to-end tests
-npm test
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
-
+# OR
+# yarn
+# yarn dev
 ```
 
 ---
