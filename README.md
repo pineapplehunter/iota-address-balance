@@ -18,6 +18,7 @@ install the dependencies and build a dev version of it.
 ```bash
 npm install
 npm run dev
+# OR
 # yarn
 # yarn dev
 ```
