@@ -10,6 +10,7 @@ matrix:
   - os: linux
     env: CC=clang CXX=clang++ npm_config_clang=1
     compiler: clang
+  - os: windows
 cache:
   directories:
   - node_modules
@@ -37,7 +38,7 @@ install:
 script:
 #- xvfb-maybe node_modules/.bin/karma start test/unit/karma.conf.js
 #- yarn run pack && xvfb-maybe node_modules/.bin/mocha test/e2e
-- yarn run build
+- yarn run build:all
 branches:
   only:
   - master
