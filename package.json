@@ -64,8 +64,7 @@
       "icon": "build/icons",
       "target": [
         "AppImage",
-        "deb",
-        "zip"
+        "deb"
       ]
     }
   },
