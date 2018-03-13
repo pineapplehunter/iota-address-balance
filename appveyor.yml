@@ -11,11 +11,6 @@ platform:
   - x64
 
 cache:
-  - node_modules
-  - '%APPDATA%\npm-cache'
-  - '%USERPROFILE%\.electron'
-  - '%USERPROFILE%\AppData\Local\Yarn\cache'
-  - '%USERPROFILE%\AppData\Local\electron-builder\cache'
 
 init:
   - git config --global core.autocrlf input
