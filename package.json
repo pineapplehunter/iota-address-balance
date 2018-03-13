@@ -1,6 +1,6 @@
 {
   "name": "iota-adress-balance",
-  "version": "v0.1.4",
+  "version": "v0.1.5",
   "author": "Shogo Takata <peshogo@gmail.com>",
   "description": "an app that shows the iota balance of each address",
   "license": "MIT",
@@ -72,6 +72,7 @@
     "axion": "^0.1.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
+    "electron-default-menu": "^1.0.1",
     "iota.lib.js": "^0.4.7",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
