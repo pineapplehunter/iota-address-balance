@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu, shell } from 'electron'
+import defaultMenu from 'electron-default-menu'
 
 /**
  * Set `__static` path to static files in production
@@ -33,6 +34,11 @@ function createWindow () {
 }
 
 app.on('ready', createWindow)
+
+app.on('ready', () => {
+  const menu = defaultMenu(app, shell)
+  Menu.setApplicationMenu(Menu.buildFromTemplate(menu))
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
