@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "axion": "^0.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.0.0",
     "electron-default-menu": "^1.0.1",
     "iota.lib.js": "^0.4.7",
