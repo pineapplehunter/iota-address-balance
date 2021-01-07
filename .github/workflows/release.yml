@@ -13,11 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: butlerlogic/action-autotag@stable
-        with:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          strategy: package
-          tag_prefix: "v"
 
       - name: Check out Git repository
         uses: actions/checkout@v1
