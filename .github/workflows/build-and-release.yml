@@ -35,11 +35,22 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
           
       - name: yarn
         run: yarn
 
-      - name: make
+      - name: publish
         env: 
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: yarn electron-forge publish
