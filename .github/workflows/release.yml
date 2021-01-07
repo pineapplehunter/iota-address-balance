@@ -1,11 +1,11 @@
-name: Build/Release
+name: Publish
 
 on:
   release:
     types: [created]
 
 jobs:
-  release:
+  publish:
     runs-on: ${{ matrix.os }}
 
     strategy:
