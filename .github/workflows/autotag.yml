@@ -28,6 +28,10 @@ jobs:
           release_name: ${{ steps.tagging.outputs.tagname }}
           draft: false
           prerelease: false
+      
+      - name: exit 1 if no tagging
+        if: "${{ steps.tagging.outputs.tagcreated == 'yes' }}"
+        run: exit 1
 
   publish:
     runs-on: ${{ matrix.os }}
