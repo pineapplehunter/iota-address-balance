@@ -1,6 +1,6 @@
 {
   "name": "iota-adress-balance",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Shogo Takata <peshogo@gmail.com>",
   "description": "an app that shows the iota balance of each address",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "electron": "^11.1.1"
   },
   "repository": {
@@ -28,17 +29,15 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [{
+      "makers": [
+        {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "iota_adress_balance"
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "name": "@electron-forge/maker-zip"
         },
         {
           "name": "@electron-forge/maker-deb",
@@ -49,16 +48,18 @@
           "config": {}
         }
       ],
-      "publishers": [{
-        "name": "@electron-forge/publisher-github",
-        "config": {
-          "repository": {
-            "owner": "pineapplehunter",
-            "name": "iota-address-balance"
-          },
-          "prerelease": true
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "pineapplehunter",
+              "name": "iota-address-balance"
+            },
+            "prerelease": true
+          }
         }
-      }]
+      ]
     }
   }
 }
