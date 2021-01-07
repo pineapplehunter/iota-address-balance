@@ -39,7 +39,7 @@ jobs:
       - name: yarn
         run: yarn
 
-      - name: make
+      - name: publish
         env: 
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         run: yarn electron-forge publish
