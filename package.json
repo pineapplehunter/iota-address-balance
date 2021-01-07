@@ -1,6 +1,6 @@
 {
   "name": "iota-adress-balance",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "author": "Shogo Takata <peshogo@gmail.com>",
   "description": "an app that shows the iota balance of each address",
   "license": "MIT",
@@ -28,8 +28,7 @@
   "config": {
     "forge": {
       "packagerConfig": {},
-      "makers": [
-        {
+      "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "iota_adress_balance"
